@@ -1,0 +1,77 @@
+import { useAddBook } from '@/store/bookmark';
+import { useShowStore } from '@/store/show-form';
+import React, { useState } from 'react';
+import { toast } from 'sonner';
+
+export default function BookForm() {
+  const addBook = useAddBook();
+  const { showForm } = useShowStore();
+
+  const [book, setBook] = useState('');
+  const [desc, setDesc] = useState('');
+  const [link, setLink] = useState('');
+
+  const formSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    addBook(book, desc, link);
+    showForm();
+    toast.success('Bookmark added successfully!');
+    // Clear form
+    setBook('');
+    setDesc('');
+    setLink('');
+  };
+
+  return (
+    <div className="fixed left-0 top-0 z-50 flex min-h-dvh w-full items-center justify-center px-8 backdrop-blur bg-black/50">
+      <button
+        type="button"
+        className="transition-colors absolute right-4 top-40 rounded-full bg-[rgb(39,63,79)] p-1 duration-200 ease-in-out hover:bg-[rgba(39,63,79,.96)] lg:right-72 lg:p-2"
+        onClick={showForm}
+        aria-label="Close the book form">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          className="size-7 text-white">
+          <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+        </svg>
+      </button>
+      <form
+        onSubmit={formSubmit}
+        className="mx-auto flex flex-col items-center justify-center gap-4 lg:max-w-xl w-full ">
+        <input
+          type="text"
+          className="w-full rounded bg-slate-100 px-2 py-1 text-sm font-medium  shadow-[0_0_2px] shadow-slate-400 transition-all duration-200 ease-in focus:shadow-[0_0_8px] focus:outline-none lg:px-3 lg:py-2"
+          value={book}
+          onChange={(e) => setBook(e.target.value)}
+          placeholder="Enter the name of the website"
+          required
+          autoFocus
+        />
+        <input
+          type="text"
+          className="w-full rounded bg-slate-100 px-2 py-1 text-sm font-medium  shadow-[0_0_2px] shadow-slate-400 transition-all duration-200 ease-in focus:shadow-[0_0_8px] focus:outline-none lg:px-3 lg:py-2"
+          value={link}
+          onChange={(e) => setLink(e.target.value)}
+          placeholder="Enter the link of the website"
+          required
+          autoFocus
+        />
+        <textarea
+          className="w-full rounded bg-slate-100 px-2 py-1 text-sm font-medium  shadow-[0_0_2px] shadow-slate-400 transition-all duration-200 ease-in focus:shadow-[0_0_8px] focus:outline-none lg:px-3 lg:py-2"
+          value={desc}
+          onChange={(e) => setDesc(e.target.value)}
+          placeholder="Enter a brief description for the website"
+          required></textarea>
+
+        <button
+          type="submit"
+          className="bg-[#FE7743] text-white py-1 px-4 rounded font-medium text-sm lg:text-base transition-colors hover:bg-[rgba(254,119,67,.9)]"
+          aria-label="Submit the book form">
+          Submit
+        </button>
+      </form>
+    </div>
+  );
+}
