@@ -40,14 +40,14 @@ export default function Hero() {
                     />
                     <div className="grid place-content-center">
                       <h3
-                        className="font-semibold text-sm md:text-base lg:text-lg"
+                        className="font-semibold text-lg md:text-base lg:text-xl"
                         style={{ lineHeight: 1.2 }}>
                         {book.name}
                       </h3>
                       <a
                         href={book.link}
                         target="_blank"
-                        className="text-xs text-gray-500 font-medium lg:text-sm transition-colors hover:text-gray-900">
+                        className="text-sm text-gray-500 font-medium transition-colors hover:text-gray-900">
                         {book.link.slice(8, length - 1)}
                       </a>
                     </div>
