@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'Bookmark Manager',
   description: 'A place where you can save all your preferred websites.',
   keywords: ['Bookmark Manager, link saving tool'],
-
+  metadataBase: new URL('https://bomark-manager.netlify.app'),
   openGraph: {
     type: 'website',
     images: [
