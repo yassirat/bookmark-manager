@@ -1,7 +1,20 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme inline {
   --font-sans: var(--font-main);
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(100);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 button {
