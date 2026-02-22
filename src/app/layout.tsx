@@ -1,3 +1,4 @@
+import ThemeProvider from '@/components/ui/theme-provider';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import './globals.css';
@@ -42,7 +43,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${mainFont.variable} antialiased`}>{children}</body>
+      <body className={`${mainFont.variable} antialiased`}>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
