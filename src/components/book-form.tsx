@@ -23,7 +23,9 @@ export default function BookForm() {
   };
 
   return (
-    <div className="fixed left-0 top-0 z-50 flex min-h-dvh w-full items-center justify-center px-8 backdrop-blur bg-black/50">
+    <div
+      className="fixed left-0 top-0 z-50 flex min-h-dvh w-full items-center justify-center px-8 backdrop-blur bg-black/50 animate-fade"
+      style={{ animation: 'fade .4s ease-in-out' }}>
       <button
         type="button"
         className="transition-colors absolute right-4 top-40 rounded-full bg-[rgb(39,63,79)] p-1 duration-200 ease-in-out hover:bg-[rgba(39,63,79,.96)] lg:right-72 lg:p-2"
@@ -42,7 +44,7 @@ export default function BookForm() {
         className="mx-auto flex flex-col items-center justify-center gap-4 lg:max-w-xl w-full ">
         <input
           type="text"
-          className="w-full rounded bg-slate-100 px-2 py-1 text-sm font-medium  shadow-[0_0_2px] shadow-slate-400 transition-all duration-200 ease-in focus:shadow-[0_0_8px] focus:outline-none lg:px-3 lg:py-2"
+          className="w-full rounded bg-slate-200 dark:bg-slate-950 px-2 py-1 text-sm font-medium  shadow-[0_0_2px] shadow-slate-400 transition-all duration-200 ease-in focus:shadow-[0_0_8px] focus:outline-none lg:px-3 lg:py-2 dark:text-white"
           value={book}
           onChange={(e) => setBook(e.target.value)}
           placeholder="Enter the name of the website"
@@ -51,7 +53,7 @@ export default function BookForm() {
         />
         <input
           type="text"
-          className="w-full rounded bg-slate-100 px-2 py-1 text-sm font-medium  shadow-[0_0_2px] shadow-slate-400 transition-all duration-200 ease-in focus:shadow-[0_0_8px] focus:outline-none lg:px-3 lg:py-2"
+          className="w-full rounded bg-slate-200 dark:bg-slate-950 px-2 py-1 text-sm font-medium  shadow-[0_0_2px] shadow-slate-400 transition-all duration-200 ease-in focus:shadow-[0_0_8px] focus:outline-none lg:px-3 lg:py-2 dark:text-white"
           value={link}
           onChange={(e) => setLink(e.target.value)}
           placeholder="Enter the link of the website"
@@ -59,7 +61,7 @@ export default function BookForm() {
           autoFocus
         />
         <textarea
-          className="w-full rounded bg-slate-100 px-2 py-1 text-sm font-medium  shadow-[0_0_2px] shadow-slate-400 transition-all duration-200 ease-in focus:shadow-[0_0_8px] focus:outline-none lg:px-3 lg:py-2"
+          className="w-full rounded bg-slate-200 dark:bg-slate-950 px-2 py-1 text-sm font-medium  shadow-[0_0_2px] shadow-slate-400 transition-all duration-200 ease-in focus:shadow-[0_0_8px] focus:outline-none lg:px-3 lg:py-2 dark:text-white"
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
           placeholder="Enter a brief description for the website"
@@ -67,7 +69,7 @@ export default function BookForm() {
 
         <button
           type="submit"
-          className="bg-[#FE7743] text-white py-1 px-4 rounded font-medium text-sm lg:text-base transition-colors hover:bg-[rgba(254,119,67,.9)]"
+          className="bg-[#FE7743] text-black py-1 px-4 rounded font-medium text-sm lg:text-base transition-colors hover:bg-[rgba(254,119,67,.85)]"
           aria-label="Submit the book form">
           Submit
         </button>

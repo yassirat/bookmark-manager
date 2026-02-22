@@ -1,11 +1,13 @@
 import { useShowStore } from '@/store/show-form';
-import { BookmarkIcon, PlusIcon } from './ui/svg-icons';
+import { useThemeStore } from '@/store/theme';
+import { BookmarkIcon, PlusIcon, ThemeIcon } from './ui/svg-icons';
 
 export default function Header() {
   const { showForm } = useShowStore();
+  const toggleTheme = useThemeStore((state) => state.toggleTheme);
 
   return (
-    <header className="p-4">
+    <header className="p-4 dark:bg-neutral-950 dark:text-white">
       <div className="flex items-center justify-between max-w-6xl mx-auto">
         {/* First Block */}
         <div className="flex items-center gap-2">
@@ -14,15 +16,22 @@ export default function Header() {
         </div>
 
         {/* Second Block */}
-        <button
-          type="button"
-          className="bg-[#273f4f] text-white  flex items-center gap-2 py-2 px-4 rounded-md transition-colors hover:bg-[rgba(39,63,79,.95)]"
-          onClick={showForm}>
-          <PlusIcon />
-          <span className="text-xs font-medium lg:text-sm xl:text-base">
-            Add Bookmark
-          </span>
-        </button>
+        <div className="flex items-center gap-4">
+          <button
+            type="button"
+            className="bg-[#273f4f] text-white  flex items-center gap-2 py-2 px-4 rounded-md transition-colors hover:bg-[rgba(39,63,79,.90)]"
+            onClick={showForm}
+            aria-label="Open the bookmark form">
+            <PlusIcon />
+            <span className="text-xs font-medium lg:text-sm">Add Bookmark</span>
+          </button>
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label="Change the theme">
+            <ThemeIcon />
+          </button>
+        </div>
       </div>
     </header>
   );
