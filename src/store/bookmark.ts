@@ -8,6 +8,7 @@ export interface BookEntry {
   description: string;
   link: string;
   faviconUrl: string;
+  createdAt: Date;
 }
 
 type Actions = {
@@ -45,6 +46,7 @@ const useBookStore = create<Actions>()(
           link: link.trim(),
           faviconUrl,
           id: crypto.randomUUID(),
+          createdAt: new Date(),
         };
 
         set((state) => ({
