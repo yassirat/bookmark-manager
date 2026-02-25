@@ -11,7 +11,7 @@ interface ThemeProps {
 export const useThemeStore = create<ThemeProps>()(
   persist(
     (set) => ({
-      theme: 'dark',
+      theme: 'light',
       toggleTheme: () =>
         set((state) => {
           const newTheme = state.theme === 'light' ? 'dark' : 'light';
