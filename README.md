@@ -6,4 +6,4 @@ This is a [Next.js](https://nextjs.org) project.
 
 ![image alt](./screenshot01.jpeg)
 
-![image alt](./Screenshot04.png)
+![image alt](./screenshot03.jpeg)
