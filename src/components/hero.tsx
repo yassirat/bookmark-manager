@@ -84,7 +84,7 @@ export default function Hero() {
                 <div className="px-4 py-2 flex items-center gap-2 border-t-2 border-t-gray-300 dark:border-t-gray-700">
                   <CalendarIcon />
                   <p className="font-medium text-xs text-gray-500 dark:text-gray-400">
-                    {book.createdAt.toLocaleDateString('en-US', {
+                    {new Date(book.createdAt).toLocaleDateString('en-US', {
                       year: 'numeric',
                       month: 'short',
                       day: 'numeric',
