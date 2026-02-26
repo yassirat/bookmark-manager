@@ -19,11 +19,13 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <button
             type="button"
-            className="bg-[#273f4f] text-white  flex items-center gap-2 py-2 px-4 rounded-md transition-colors hover:bg-[rgba(39,63,79,.90)]"
+            className="bg-[#273f4f] text-white  flex items-center gap-2 p-2 rounded-md transition-colors hover:bg-[rgba(39,63,79,.90)]"
             onClick={showForm}
             aria-label="Open the bookmark form">
             <PlusIcon />
-            <span className="text-xs font-medium lg:text-sm">Add Bookmark</span>
+            <span className="text-xs font-medium hidden lg:block">
+              Add Bookmark
+            </span>
           </button>
           <button
             type="button"

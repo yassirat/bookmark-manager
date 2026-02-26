@@ -10,8 +10,6 @@ export default function Hero() {
   const show = useShowStore((state) => state.show);
   const showForm = useShowStore((state) => state.showForm);
 
-  // const time = new Date();
-
   return (
     <article className="bg-blue-50 py-6 px-8 dark:bg-neutral-900 dark:text-white">
       {show && <BookForm />}
@@ -22,11 +20,11 @@ export default function Hero() {
           </p>
           <button
             type="button"
-            className="bg-[#273f4f] text-white  flex items-center gap-2 py-2 px-4 rounded-md transition-colors hover:bg-[rgba(39,63,79,.90)]"
+            className="bg-[#273f4f] text-white flex items-center gap-2 p-2 rounded-md transition-colors hover:bg-[rgba(39,63,79,.90)]"
             onClick={showForm}
             aria-label="Open the bookmark form">
             <PlusIcon />
-            <span className="text-xs font-medium lg:text-sm">Add Bookmark</span>
+            <span className="text-xs font-medium">Add Bookmark</span>
           </button>
         </div>
       ) : (
@@ -38,6 +36,7 @@ export default function Hero() {
                 className="w-68 h-56 rounded-lg bg-white/80 dark:bg-neutral-900/80 dark:text-white shadow flex flex-col justify-between gap-4"
                 style={{
                   boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
+                  animation: 'show .4s ease-in-out',
                 }}
                 key={book.id}>
                 <div className="flex items-center justify-between border-b-2 border-b-gray-300 py-4 px-4 dark:border-b-gray-700">
