@@ -1,9 +1,9 @@
 import ThemeProvider from '@/components/ui/theme-provider';
 import type { Metadata } from 'next';
-import { Arimo } from 'next/font/google';
+import { Rubik } from 'next/font/google';
 import './globals.css';
 
-const mainFont = Arimo({
+const mainFont = Rubik({
   variable: '--font-main',
   subsets: ['latin'],
   display: 'swap',
