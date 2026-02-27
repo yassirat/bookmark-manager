@@ -1,6 +1,7 @@
 import { useBook, useDeleteBook } from '@/store/bookmark';
 import { useShowStore } from '@/store/show-form';
 import Image from 'next/image';
+import Link from 'next/link';
 import BookForm from './book-form';
 import { CalendarIcon, DeleteIcon, PlusIcon } from './ui/svg-icons';
 
@@ -33,7 +34,7 @@ export default function Hero() {
             {/* First grid */}
             {books.map((book) => (
               <div
-                className="w-68 h-56 rounded-lg bg-white/80 dark:bg-neutral-900/80 dark:text-white shadow flex flex-col justify-between gap-4"
+                className="w-70 h-56 rounded-lg bg-white/80 dark:bg-neutral-900/80 dark:text-white shadow flex flex-col justify-between gap-4"
                 style={{
                   boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
                   animation: 'show .4s ease-in-out',
@@ -56,12 +57,16 @@ export default function Hero() {
                         style={{ lineHeight: 1.2 }}>
                         {book.name}
                       </h3>
-                      <a
+                      <Link
                         href={book.link}
                         target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit ${book.name} (opens in new tab)`}
                         className="text-sm text-gray-500 dark:text-gray-300 transition-colors hover:text-gray-900 dark:hover:text-white">
-                        {book.link.slice(8, length - 1)}
-                      </a>
+                        {book.link.length > 50
+                          ? `${book.link.replace(/^https?:\/\//, '').slice(0, 20)}...`
+                          : book.link.replace(/^https?:\/\//, '')}
+                      </Link>
                     </div>
                   </div>
                   <button
