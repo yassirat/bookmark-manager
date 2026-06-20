@@ -10,17 +10,15 @@ export default function BookForm() {
   const { showForm } = useShowStore();
 
   const [book, setBook] = useState('');
-  const [desc, setDesc] = useState('');
   const [link, setLink] = useState('');
 
   const formSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
-    addBook(book, desc, link);
+    addBook(book, link);
     showForm();
     toast.success('Bookmark added successfully!');
     // Clear form
     setBook('');
-    setDesc('');
     setLink('');
   };
 
@@ -62,12 +60,6 @@ export default function BookForm() {
           required
           autoFocus
         />
-        <textarea
-          className="w-full rounded bg-slate-200 dark:bg-slate-950 px-2 py-1 text-sm font-medium  shadow-[0_0_2px] shadow-slate-400 transition-all duration-200 ease-in focus:shadow-[0_0_8px] focus:outline-none lg:px-3 lg:py-2 dark:text-white"
-          value={desc}
-          onChange={(e) => setDesc(e.target.value)}
-          placeholder="Enter a brief description for the website"
-          required></textarea>
 
         <button
           type="submit"
