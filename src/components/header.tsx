@@ -7,7 +7,7 @@ export default function Header() {
   const toggleTheme = useThemeStore((state) => state.toggleTheme);
 
   return (
-    <header className="p-4 dark:bg-neutral-950 dark:text-white">
+    <header className="p-4 dark:bg-neutral-950 dark:text-white sticky top-0">
       <div className="flex items-center justify-between max-w-6xl mx-auto">
         {/* First Block */}
         <div className="flex items-center gap-2">
