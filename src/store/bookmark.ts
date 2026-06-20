@@ -5,7 +5,6 @@ import { persist } from 'zustand/middleware';
 export interface BookEntry {
   name: string;
   id: string;
-  description: string;
   link: string;
   faviconUrl: string;
   createdAt: Date;
@@ -13,7 +12,7 @@ export interface BookEntry {
 
 type Actions = {
   books: BookEntry[];
-  addBook: (name: string, description: string, link: string) => void;
+  addBook: (name: string, link: string) => void;
   deleteBook: (id: string) => void;
 };
 
@@ -23,7 +22,7 @@ const useBookStore = create<Actions>()(
       books: [],
       show: false,
 
-      addBook: (name, description, link) => {
+      addBook: (name, link) => {
         // Extract domain from URL
         let domain = link;
         let faviconUrl = '';
@@ -42,7 +41,6 @@ const useBookStore = create<Actions>()(
 
         const newBook: BookEntry = {
           name: name.trim(),
-          description: description.trim(),
           link: link.trim(),
           faviconUrl,
           id: crypto.randomUUID(),
