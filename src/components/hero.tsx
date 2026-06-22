@@ -48,7 +48,7 @@ export default function Hero() {
                   key={book.id}>
                   <div className="flex items-center justify-between border-b-2 border-b-gray-300 py-2 px-4 dark:border-b-gray-700">
                     <div className="flex items-center gap-3">
-                      <div className="shadow">
+                      <div>
                         <Image
                           src={book.faviconUrl}
                           alt={`${book.name}'s favicon`}
@@ -59,7 +59,7 @@ export default function Hero() {
                       </div>
                       <div className="grid place-content-center">
                         <h3 className="font-medium" style={{ lineHeight: 1.2 }}>
-                          {book.name.length > 50
+                          {book.name.length > 20
                             ? `${book.name.slice(0, 20)}...`
                             : book.name}
                         </h3>
