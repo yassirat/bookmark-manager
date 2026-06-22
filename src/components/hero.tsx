@@ -59,7 +59,9 @@ export default function Hero() {
                       </div>
                       <div className="grid place-content-center">
                         <h3 className="font-medium" style={{ lineHeight: 1.2 }}>
-                          {book.name}
+                          {book.name.length > 50
+                            ? `${book.name.slice(0, 20)}...`
+                            : book.name}
                         </h3>
                         <Link
                           href={book.link}
