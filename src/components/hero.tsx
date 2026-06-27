@@ -86,7 +86,7 @@ export default function Hero() {
                   {/* Second Grid */}
                   <div className="px-4 pb-2 flex items-center gap-2">
                     <p className="font-medium text-xs text-gray-500 dark:text-gray-400">
-                      Added at:{' '}
+                      Added:{' '}
                       {new Date(book.createdAt).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'short',
