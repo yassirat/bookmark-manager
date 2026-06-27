@@ -7,7 +7,7 @@ export default function Header() {
   const toggleTheme = useThemeStore((state) => state.toggleTheme);
 
   return (
-    <header className="p-4 bg-neutral-100 dark:bg-neutral-950 dark:text-white sticky top-0">
+    <header className="p-4 bg-neutral-50 dark:bg-neutral-950 dark:text-white sticky top-0">
       <div className="flex items-center justify-between max-w-6xl mx-auto">
         {/* First Block */}
         <div className="flex items-center gap-2">
@@ -21,6 +21,7 @@ export default function Header() {
             type="button"
             className="bg-[#273f4f] text-white  flex items-center gap-2 p-2 rounded-md transition-colors hover:bg-[rgba(39,63,79,.90)]"
             onClick={showForm}
+            title="Open the bookmark form"
             aria-label="Open the bookmark form">
             <PlusIcon />
             <span className="text-xs font-medium hidden lg:block">
