@@ -12,5 +12,5 @@ This is a [Next.js](https://nextjs.org) project.
 
 - Next.js
 - Typescript
-- Zustand
 - TailwindCSS
+- Zustand
