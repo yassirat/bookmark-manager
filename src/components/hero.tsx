@@ -15,6 +15,17 @@ export default function Hero() {
     return new Date(b.createdAt || b.createdAt).getTime();
   };
 
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = date.toLocaleDateString('en-US', { month: 'long' });
+    const year = date.getFullYear();
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+
+    return `${day} ${month} ${year}, ${hours}:${minutes}`;
+  };
+
   return (
     <article className="bg-blue-50 py-6 px-8 dark:bg-neutral-900 dark:text-white">
       {show && <BookForm />}
@@ -88,12 +99,7 @@ export default function Hero() {
                   {/* Second Grid */}
                   <div className="px-4 pb-2 flex items-center gap-2">
                     <p className="font-medium text-xs text-gray-500 dark:text-gray-400">
-                      Added:{' '}
-                      {new Date(book.createdAt).toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric',
-                      })}
+                      Added: {formatDate(book.createdAt)}
                     </p>
                   </div>
                 </div>
