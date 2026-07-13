@@ -11,7 +11,7 @@ export default function Home() {
         <Header />
         <Hero />
       </section>
-      <Toaster position="top-right" richColors />
+      <Toaster position="top-right" richColors closeButton />
     </main>
   );
 }
