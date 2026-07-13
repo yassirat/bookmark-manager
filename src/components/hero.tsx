@@ -3,7 +3,7 @@ import { useShowStore } from '@/store/show-form';
 import Image from 'next/image';
 import Link from 'next/link';
 import BookForm from './book-form';
-import { DeleteIcon, PlusIcon } from './ui/svg-icons';
+import { CalendarIcon, DeleteIcon, PlusIcon } from './ui/svg-icons';
 
 export default function Hero() {
   const books = useBook();
@@ -91,13 +91,15 @@ export default function Hero() {
                     <button
                       type="button"
                       onClick={() => deleteBook(book.id)}
-                      aria-label="Delete the bookmark">
+                      aria-label="Delete the bookmark"
+                      className="p-1 bg-red-700 text-white rounded-md transition-colors hover:bg-red-600">
                       <DeleteIcon />
                     </button>
                   </div>
 
                   {/* Second Grid */}
                   <div className="px-4 pb-2 flex items-center gap-2">
+                    <CalendarIcon />
                     <p className="font-medium text-xs text-gray-500 dark:text-gray-400">
                       Added: {formatDate(book.createdAt)}
                     </p>
