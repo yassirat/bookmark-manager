@@ -42,7 +42,7 @@ export const PlusIcon = () => {
       viewBox="0 0 24 24"
       strokeWidth={2.5}
       stroke="currentColor"
-      className="size-5">
+      className="size-4">
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
